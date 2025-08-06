@@ -1,0 +1,36 @@
+class Walker {
+  // Objects have a constructor where they are initialized.
+  constructor() {
+    // Objects have data.
+    this.x = width / 2;
+    this.y = height / 2;
+  }
+  // Objects have methods.
+  show() {
+    stroke(0);
+    point(this.x, this.y);
+  }
+let choice = floor(random(4));
+  step() {
+    //{!1} 0, 1, 2, or 3. The random choice determines the step.
+    let choice = floor(random(4));
+    if (choice === 0) {
+      this.x++;
+    } else if (choice === 1) {
+      this.x--;
+    } else if (choice === 2) {
+      this.y++;
+    } else {
+      this.y--;
+    }
+  }
+}
+// A Walker object
+let walker;
+//{!1} Remember how p5.js works? setup() is executed once when the sketch starts.
+function setup() {
+  createCanvas(640, 240);
+  // Create the walker.
+  walker = new Walker();
+  background(255);
+}
