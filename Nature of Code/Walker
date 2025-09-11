@@ -34,3 +34,16 @@ function setup() {
   walker = new Walker();
   background(255);
 }
+//{!1} Then draw() loops forever and ever (until you quit).
+function draw() {
+  // Call functions on the walker.
+  walker.step();
+  walker.show();
+}
+  step() {
+    //{!2} Yields –1, 0, or 1
+    let xstep = floor(random(3)) - 1;
+    let ystep = floor(random(3)) - 1;
+    this.x += xstep;
+    this.y += ystep;
+  }
